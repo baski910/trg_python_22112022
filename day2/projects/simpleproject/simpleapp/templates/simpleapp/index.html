@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>First Template from Django App</h1>
+    <h2>{{ message }}</h2>
+    <ul>
+        {% for d in names %}
+        <li>{{ d.name }}</li>
+        {% endfor %}
+    </ul>
+    <form action="{% url 'simpleapp:params' %}" method="POST">
+        {% csrf_token %}
+        <p>Email: <input type="text" name="email" ></p>
+        <p>Organisation: <input type="text" name="organisation" ></p>
+        <p><input type="submit" value="submit"></p>
+    </form>
+</body>
+</html>
